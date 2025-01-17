@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #222;
+    color: lightgray;
+}
+button, input {
+    background-color: transparent;
+    color: white;
+    font-size: 36px;
+    border: none;
+}
+a {
+    color: lightgray;
+    &:hover {
+        text-decoration: underline;
+        color: white;
+    }
+}

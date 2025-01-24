@@ -1,26 +1,23 @@
 import words from '../../../public/words-en.json'
-import { useContext } from 'react'
 import { keyContext } from '../../key_context'
+import { useContext, useState, useEffect } from 'react'
 
 export function Words() {
-    let wordCount = 0
-    const { key } = useContext(keyContext)
+    const { setKey } = useContext(keyContext)
+    const [randomWords, setRandomWords] = useState<string>('')
 
-    const randomWord = () => {
-        let wordsLine: string = ''
+    useEffect(() => {
+        let wordsLine = ''
+        let wordCount = 0
+
         while (wordCount < 10) {
             const randomWord = words[Math.floor(Math.random() * words.length)]
             wordsLine += `${randomWord} `
             wordCount++
-
-            if (wordCount === 10) return wordsLine
         }
-    }
+        setRandomWords(wordsLine)
+        setKey(wordsLine)
+    }, [setKey])
 
-    return (
-        <div className='flex gap-2'>
-            <span>{randomWord()}</span>
-            <p>{key}</p>
-        </div>
-    )
+    return <div className='flex gap-2'>{randomWords}</div>
 }

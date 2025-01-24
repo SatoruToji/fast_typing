@@ -1,7 +1,5 @@
-//components
 import { Words } from './body/Words'
 import { KeyProvider } from '../key_context'
-
 import { KeyHooks } from './key hook/KeyHook'
 import { Nav } from './nav/Nav'
 

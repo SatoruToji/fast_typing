@@ -5,7 +5,7 @@ export function Nav() {
           <a href="" target="_blank">settings</a>
         </li>
         <li>
-          <a href="" target="_blank">github</a>
+          <a href="https://github.com/SatoruToji/fast_typing" target="_blank">github</a>
         </li>
     </ul>
   </nav>;

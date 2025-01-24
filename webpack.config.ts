@@ -51,7 +51,7 @@ export default (env: any) => {
             ],
         },
         resolve: {
-            extensions: ['.tsx', '.ts', '.js'],
+            extensions: ['.tsx', '.jsx', '.ts', '.js'],
         },
         devtool: isDev && 'inline-source-map',
         devServer: isDev

@@ -1,19 +1,12 @@
-import { useContext } from 'react'
 import words from '../../../public/words-en.json'
-import { CountContext } from '../../context_count'
-
-interface myContextType {
-    count: number
-    setCount: React.Dispatch<React.SetStateAction<number>>
-}
+import { useContext } from 'react'
+import { keyContext } from '../../key_context'
 
 export function Words() {
     let wordCount = 0
-    const { count, setCount } = useContext<myContextType>(CountContext)
+    const { key } = useContext(keyContext)
 
     const randomWord = () => {
-        
-
         let wordsLine: string = ''
         while (wordCount < 10) {
             const randomWord = words[Math.floor(Math.random() * words.length)]
@@ -27,7 +20,7 @@ export function Words() {
     return (
         <div className='flex gap-2'>
             <span>{randomWord()}</span>
-            <button onClick={() => setCount(1 + count)}>хромосомы {count}</button>
+            <p>{key}</p>
         </div>
     )
 }

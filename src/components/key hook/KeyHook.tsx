@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react'
 import { keyContext } from '../../key_context'
 
-export function KeyHooks() {
+export function KeyHooks({isRestard}: {isRestard: () => void}) {
     const { key } = useContext(keyContext)
     const [line, setLine] = useState<string>('')
 
@@ -16,6 +16,7 @@ export function KeyHooks() {
                 if (i === key.length) {
                     window.removeEventListener('keydown', handleKey)
                     console.log('u won')
+                    isRestard()
                 }
             }
         }

@@ -8,7 +8,7 @@ export function App() {
     const [restard, setRestard] = useState<number>(0)
 
     const handleRestard = () => {
-        setRestard((prev) => 1 + prev)
+        setRestard( (prev) => 1 + prev )
     }
 
     return (

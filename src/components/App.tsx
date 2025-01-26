@@ -7,12 +7,16 @@ export function App() {
     return (
         <div className='flex flex-col justify-center min-h-screen'>
             <Nav />
-            <main className='flex justify-center items-center flex-grow'>
-                <KeyProvider>
-                    <Words />
-                    <KeyHooks />
-                </KeyProvider>
-            </main>
+            <KeyProvider>
+                <main className='relative flex justify-center items-center flex-grow'>
+                    <div className='absolute'>
+                        <Words />
+                        <div className='huy'>
+                            <KeyHooks />
+                        </div>
+                    </div>
+                </main>
+            </KeyProvider>
         </div>
     )
 }

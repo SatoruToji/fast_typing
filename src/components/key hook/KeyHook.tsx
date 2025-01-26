@@ -1,23 +1,22 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { keyContext } from '../../key_context'
 
 export function KeyHooks() {
     const { key } = useContext(keyContext)
+    const [line, setLine] = useState<string>('')
 
     useEffect(() => {
         let i = 0
-        console.log(key)
 
         const handleKey = (e: KeyboardEvent) => {
             if (e.key === key[i]) {
-                console.log('successful')
+                setLine((prevLine) => prevLine + e.key)
                 i++
+
                 if (i === key.length) {
-                    console.log('u won')
                     window.removeEventListener('keydown', handleKey)
+                    console.log('u won')
                 }
-            } else {
-                console.log('неправильно')
             }
         }
         window.addEventListener('keydown', handleKey)
@@ -26,5 +25,5 @@ export function KeyHooks() {
             window.removeEventListener('keydown', handleKey)
         }
     }, [key])
-    return <div></div>
+    return <div> {line} </div>
 }

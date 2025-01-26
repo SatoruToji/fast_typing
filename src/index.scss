@@ -2,11 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .huy {
+        position: absolute;
+        bottom: 0.4px;
+        color: gray;
+    }
+}
+
 body {
     background-color: #222;
     color: lightgray;
 }
-button, input {
+button,
+input {
     background-color: transparent;
     color: white;
     font-size: 36px;
